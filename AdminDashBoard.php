@@ -80,41 +80,6 @@
   </div>
 </nav>
 
- <?php
-
-//        if($_SERVER['REQUEST_METHOD'] == 'POST')
-//        {
-//            $usernameAC = $_POST['username'];
-//            $statusText = $_POST['statusText'];
-//            //echo "Your post was successful.<br>";
-//
-//
-//            $servername = "localhost";
-//            $username = "root";
-//            $password = "";
-//            $database = "users";
-//
-//
-//            $conn = mysqli_connect($servername, $username, $password, $database);
-//
-//            if(!$conn){
-//              die("Sorry we failed to connect: ". mysqli_connect_error());
-//            }	
-//
-//
-//
-//            $sql = "INSERT INTO `status` (`username`, `status`) VALUES ('$usernameAC', '$statusText')";
-//
-//            $result = mysqli_query($conn, $sql);
-//
-//            if(!$result){
-//              /*echo "The data was inserted successfully!<br>";
-//            }
-//            else{*/
-//              echo "The data wasn't inserted successfully because of this error";
-//            }
-//        }  
-?> 
     <div class="container my-4">
 
     <div class="row">
@@ -151,12 +116,11 @@
                 Upload
               </div>
               <div class="card-body">
-                    <h5>Import CSV File into AQI Database- PurpleAir</h5>
-                    <form action="adminDashBoard.php" method="post" enctype="multipart/form-data">
+                    <h5>Import CSV File into Organization_Station</h5>
+                    <form action="AdminDashBoard.php" method="post" enctype="multipart/form-data">
                         <div class="input-group">
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="customFileInput" aria-describedby="customFileInput" name="file">
-        <!--                        <label class="custom-file-label" for="customFileInput">Select file</label>-->
                             </div>
 
                         </div>
@@ -196,35 +160,26 @@
                         // Skip the first line
                         fgetcsv($csvFile);
                     
-                        while (($getData = fgetcsv($csvFile, 27652, ",")) !== FALSE)
+                        while (($getData = fgetcsv($csvFile, 10000, ",")) !== FALSE)
                         {
                             // Get row data
-                            $Time = $getData[0];
-                            $Location = $getData[1];
-                            $Latitude = $getData[2];
-                            $Longitude = $getData[3];
-                            $Mean = $getData[4];
+                            $StationSurKey = $getData[0];
+                            $Organization_Name = $getData[1];
 
                             // If user already exists in the database with the same email
-                            $query = " SELECT Mean FROM `routewise_data_purpleair` WHERE Time = '" . $getData[0] . "' ";
+                            $query = " SELECT * FROM `organization_station` ";
 
                             $check = mysqli_query($conn, $query);
 
                             if ($check->num_rows > 0)
                             {
-                                mysqli_query($conn, "UPDATE `routewise_data_purpleair` SET Location = '" . $Location . "', 
-                                Latitude = '" . $Latitude . "', 
-                                Longitude = '" . $Longitude . "', 
-                                Mean = '" . $Mean . "'
-                                WHERE Time = '" . $Time . "'");
+                                mysqli_query($conn, "UPDATE `organization_station` SET Organization_Name = '" . $Organization_Name . "', 
+                                WHERE StationSurKey = '" . $StationSurKey . "'");
                             }
                             else
                             {
-                                 mysqli_query($conn, "INSERT INTO `routewise_data_purpleair` (Time, Location, Latitude, Longitude, Mean) VALUES ('" . $Time . "', 
-                                 '" . $Location . "', 
-                                 '" . $Latitude . "', 
-                                 '" . $Longitude . "',
-                                 '" . $Mean . "')");
+                                 mysqli_query($conn, "INSERT INTO `organization_station` (StationSurKey, Organization_Name) VALUES ('" . $StationSurKey . "', 
+                                 '" . $Organization_Name . "' )");
 
                             }
                         }
@@ -240,12 +195,11 @@
               </div>
               <div class="card-body">
                   
-                    <h5>Import CSV File into AQI Database- EPA </h5>
-                    <form action="adminDashBoard.php" method="post" enctype="multipart/form-data">
+                    <h5>Import CSV File into Stationwise_data </h5>
+                    <form action="AdminDashBoard.php" method="post" enctype="multipart/form-data">
                         <div class="input-group">
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="customFileInput" aria-describedby="customFileInput" name="file">
-        <!--                        <label class="custom-file-label" for="customFileInput">Select file  </label>-->
                             </div>
 
                         </div>
@@ -286,31 +240,50 @@
                         {
                             // Get row data
                             $Time = $getData[0];
-                            $Location = $getData[1];
-                            $Latitude = $getData[2];
-                            $Longitude = $getData[3];
-                            $Mean = $getData[4];
+                            $StationSurKey = $getData[1];
+                            $PM25 = $getData[2];
+                            $Average_Temperature = $getData[3];
+                            $Rain_Precipitation = $getData[4];
+                            $Wind_Speed = $getData[5];
+                            $Visibility = $getData[6];
+                            $Cloud_Cover = $getData[7];
+                            $Relative_Humidity = $getData[8];
+                            $Year = $getData[9];
+                            $Season = $getData[10];
 
                             // If user already exists in the database with the same email
-                            $query = " SELECT Mean FROM `routewise_data_epa` WHERE Time = '" . $getData[0] . "' ";
+                            $query2 = " SELECT * FROM `stationwise_data`";
 
-                            $check = mysqli_query($conn, $query);
+                            $check = mysqli_query($conn, $query2);
 
                             if ($check->num_rows > 0)
                             {
-                                mysqli_query($conn, "UPDATE `routewise_data_epa` SET Location = '" . $Location . "', 
-                                Latitude = '" . $Latitude . "', 
-                                Longitude = '" . $Longitude . "', 
-                                Mean = '" . $Mean . "'
+                                mysqli_query($conn, "UPDATE `stationwise_data` SET 
+                                StationSurKey = '" . $StationSurKey . "', 
+                                PM25 = '" . $PM25 . "', 
+                                Average_Temperature = '" . $Average_Temperature . "', 
+                                Rain_Precipitation = '" . $Rain_Precipitation . "',
+                                Wind_Speed = '" . $Wind_Speed . "',
+                                Visibility = '" . $Visibility . "',
+                                Cloud_Cover = '" . $Cloud_Cover . "',
+                                Relative_Humidity = '" . $Relative_Humidity . "',
+                                Year = '" . $Year . "',
+                                Season = '" . $Season . "'
                                 WHERE Time = '" . $Time . "'");
                             }
                             else
                             {
-                                 mysqli_query($conn, "INSERT INTO `routewise_data_epa` (Time, Location, Latitude, Longitude, Mean) VALUES ('" . $Time . "', 
-                                 '" . $Location . "', 
-                                 '" . $Latitude . "', 
-                                 '" . $Longitude . "',
-                                 '" . $Mean . "')");
+                                 mysqli_query($conn, "INSERT INTO `stationwise_data` (Time, StationSurKey, PM25, Average_Temperature, Rain_Precipitation, Wind_Speed, Visibility, Cloud_Cover, Relative_Humidity, Year, Season) VALUES ('" . $Time . "', 
+                                 '" . $StationSurKey . "', 
+                                 '" . $PM25 . "', 
+                                 '" . $Average_Temperature . "',
+                                 '" . $Rain_Precipitation . "',
+                                    '" . $Wind_Speed . "',
+                                    '" . $Visibility . "',
+                                    '" . $Cloud_Cover . "',
+                                    '" . $Relative_Humidity . "',
+                                    '" . $Year . "',
+                                 '" . $Season . "')");
 
                             }
                         }
@@ -374,12 +347,11 @@
                 Upload
               </div>
               <div class="card-body">
-                    <h5>Import CSV File - Stationwise Data</h5>
-                    <form action="adminDashBoard.php" method="post" enctype="multipart/form-data">
+                    <h5>Import CSV File - Routewise Data</h5>
+                    <form action="AdminDashBoard.php" method="post" enctype="multipart/form-data">
                         <div class="input-group">
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="customFileInput" aria-describedby="customFileInput" name="file">
-        <!--                        <label class="custom-file-label" for="customFileInput">Select file</label>-->
                             </div>
 
                         </div>
@@ -391,6 +363,74 @@
                   
                 </div>
             </div>
+            
+            <?php
+            if(isset($_POST['submit3'])){
+                
+                    $fileMimes = array(
+                        'text/x-comma-separated-values',
+                        'text/comma-separated-values',
+                        'application/octet-stream',
+                        'application/vnd.ms-excel',
+                        'application/x-csv',
+                        'text/x-csv',
+                        'text/csv',
+                        'application/csv',
+                        'application/excel',
+                        'application/vnd.msexcel',
+                        'text/plain'
+                    );
+                
+                if(!empty($_FILES['file']['name']) && in_array($_FILES['file']['type'], $fileMimes)){
+                        // Open uploaded CSV file with read-only mode
+                        $csvFile = fopen($_FILES['file']['tmp_name'], 'r');
+ 
+                        // Skip the first line
+                        fgetcsv($csvFile);
+                    
+                        while (($getData = fgetcsv($csvFile, 40000, ",")) !== FALSE)
+                        {
+                            // Get row data
+                            $RouteSurKey = $getData[0];
+                            $Organization_Name = $getData[1];
+                            $Time = $getData[2];
+                            $Location = $getData[3];
+                            $Latitude = $getData[4];
+                            $Longitude = $getData[5];
+                            $Mean = $getData[6];
+
+                            // If user already exists in the database with the same email
+//                            $query = " SELECT Station FROM `organizationwise_data` WHERE DataID = '" . $getData[0] . "' ";
+                            $query3 = " SELECT * from `routewise_data` ";
+                            $check = mysqli_query($conn, $query3);
+
+                            if ($check->num_rows > 0)
+                            {
+                                mysqli_query($conn, "UPDATE `routewise_data` SET 
+                                Organization_Name = '" . $Organization_Name . "', 
+                                Time = '" . $Time . "', 
+                                Location = '" . $Location . "',
+                                Latitude = '" . $Latitude . "',
+                                Longitude = '" . $Longitude . "',
+                                Mean = '" . $Mean . "'
+                                WHERE RouteSurKey = '" . $RouteSurKey . "'");
+                            }
+                            else
+                            {
+                                 mysqli_query($conn, "INSERT INTO `organizationwise_data` (RouteSurKey, Organization_Name, Time, Location, Latitude, Longitude, Mean) VALUES ('" . $RouteSurKey . "', 
+                                 '" . $Organization_Name . "', 
+                                 '" . $Time . "', 
+                                 '" . $Location . "', 
+                                 '" . $Latitude . "', 
+                                 '" . $Longitude . "', 
+                                 '" . $Mean . "', 
+                                 '" . $Division . "')");
+
+                            }
+                        }
+                }
+            }
+        ?>
 
         </div>
         
@@ -401,12 +441,11 @@
                 Upload
               </div>
               <div class="card-body">
-                    <h5>Import CSV File - Organization Station Data</h5>
-                    <form action="adminDashBoard.php" method="post" enctype="multipart/form-data">
+                    <h5>Import CSV File - Station</h5>
+                    <form action="AdminDashBoard.php" method="post" enctype="multipart/form-data">
                         <div class="input-group">
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="customFileInput" aria-describedby="customFileInput" name="file">
-        <!--                        <label class="custom-file-label" for="customFileInput">Select file</label>-->
                             </div>
 
                         </div>
@@ -447,28 +486,27 @@
                         while (($getData = fgetcsv($csvFile, 10000, ",")) !== FALSE)
                         {
                             // Get row data
-                            $DataID = $getData[0];
-                            $Organization = $getData[1];
-                            $Station = $getData[2];
-                            $Division = $getData[3];
+                            $StationSurKey = $getData[0];
+                            $StationID = $getData[1];
+                            $Division = $getData[2];
+
 
                             // If user already exists in the database with the same email
-                            $query = " SELECT Station FROM `organization_station` WHERE DataID = '" . $getData[0] . "' ";
-
-                            $check = mysqli_query($conn, $query);
+//                            $query = " SELECT Station FROM `organizationwise_data` WHERE DataID = '" . $getData[0] . "' ";
+                            $query4 = " SELECT * from `station` ";
+                            $check = mysqli_query($conn, $query4);
 
                             if ($check->num_rows > 0)
                             {
-                                mysqli_query($conn, "UPDATE `organization_station` SET Organization = '" . $Organization . "', 
-                                Station = '" . $Station . "', 
+                                mysqli_query($conn, "UPDATE `station` SET 
+                                StationID = '" . $StationID . "', 
                                 Division = '" . $Division . "'
-                                WHERE DataID = '" . $DataID . "'");
+                                WHERE StationSurKey = '" . $StationSurKey . "'");
                             }
                             else
                             {
-                                 mysqli_query($conn, "INSERT INTO `organization_station` (DataID, Organization, Station, Division) VALUES ('" . $DataID . "', 
-                                 '" . $Organization . "', 
-                                 '" . $Station . "', 
+                                 mysqli_query($conn, "INSERT INTO `station` (StationSurKey, StationID,  Division) VALUES ('" . $StationSurKey . "', 
+                                 '" . $StationID . "', 
                                  '" . $Division . "')");
 
                             }
