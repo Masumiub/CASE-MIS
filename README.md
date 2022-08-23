@@ -15,4 +15,6 @@ So, the main purpose of this report is to present, explore and make available th
 # RICH PICTURE (AS IS)
 ![Ric Pic final as is](https://user-images.githubusercontent.com/66321598/186231100-3450a4ac-d3c4-41c3-a69e-803cc3475006.jpg)
 
+# RICH PICTURE (Proposed)
+![Ric Pic final TO Be](https://user-images.githubusercontent.com/66321598/186232365-dbd49cb0-9a7a-4c60-9a64-b14b9772cc18.jpg)
 
