@@ -7,8 +7,12 @@ Air Quality Monitoring system acts as the baseline of any air quality management
 So, the main purpose of this report is to present, explore and make available the air quality data generated at 8 major cities of Bangladesh to the public, stakeholders, researchers and policy makers.
 
 # SPECIFIC OBJECTS OF THIS REPORTS ARE:
-•	Locating contamination problem areas and understanding their spacetime changes.
-•	Complying with atmospheric air protection legislation.
-•	To assess the impacts of changes in source characteristics in the cities.
-•	Informing citizens regarding local air quality status
+-	Locating contamination problem areas and understanding their spacetime changes.
+-	Complying with atmospheric air protection legislation.
+-	To assess the impacts of changes in source characteristics in the cities.
+-	Informing citizens regarding local air quality status
+
+# RICH PICTURE (AS IS)
+![Ric Pic final as is](https://user-images.githubusercontent.com/66321598/186231100-3450a4ac-d3c4-41c3-a69e-803cc3475006.jpg)
+
 
