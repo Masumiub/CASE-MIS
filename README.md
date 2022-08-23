@@ -1,2 +1,14 @@
 # CASE-MIS
-A Web Application for Clean Air &amp; Sustainable Environment Project of Bangladesh Government
+A Web Application for Clean Air &amp; Sustainable Environment Project of Bangladesh Government.
+# OBJECTIVE OF THE PROJECT
+The most important factor to be considered in designing a monitoring system is the objective(s).
+Air Quality Monitoring system acts as the baseline of any air quality management program for a specific area/region. The outcome of the air quality monitoring system basically indicates necessity and extent of controlling emission from the sources. This project has been entrusted with a vital role of processing and supplying regular air quality data to the policy makers, stakeholders, public and …… Air quality monitoring system results shows the actuality of pollution abatement measures taken by the authority in a city or a country. For example, the air quality monitoring results certified the improvement of the air quality in Dhaka city by about 40% after phasing out of two stroke three-wheel baby taxis in 2001.
+
+So, the main purpose of this report is to present, explore and make available the air quality data generated at 8 major cities of Bangladesh to the public, stakeholders, researchers and policy makers.
+
+# SPECIFIC OBJECTS OF THIS REPORTS ARE:
+•	Locating contamination problem areas and understanding their spacetime changes.
+•	Complying with atmospheric air protection legislation.
+•	To assess the impacts of changes in source characteristics in the cities.
+•	Informing citizens regarding local air quality status
+
