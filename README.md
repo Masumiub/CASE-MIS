@@ -18,3 +18,5 @@ So, the main purpose of this report is to present, explore and make available th
 # RICH PICTURE (Proposed)
 ![Ric Pic final TO Be](https://user-images.githubusercontent.com/66321598/186232365-dbd49cb0-9a7a-4c60-9a64-b14b9772cc18.jpg)
 
+# EERD (Proposed)
+![ERD Proposed (1)](https://user-images.githubusercontent.com/66321598/186422462-d3e90f51-50b8-4ec8-80e5-13761c5f2e88.png)
