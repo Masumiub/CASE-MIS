@@ -16,12 +16,12 @@ if ($conn->connect_error) {
     $login = false;
     $showError = false;
     if($_SERVER["REQUEST_METHOD"] == "POST"){
-    /*include 'partials/_dbconnect.php';*/
+
     $username = $_POST["username"];
     $password = $_POST["password"];
     $deg = $_POST["deg"];
-        
-    $sql ="Select * from USERS where username = '$username' AND password = '$password' AND designation = '$deg'";
+    
+    $sql ="Select * from USERS where username = '$username' AND password = '$password' AND designation = 'Data Entry Operator'"; //'$deg'
     $result = mysqli_query($conn, $sql);
     $num = mysqli_num_rows($result);
 
@@ -30,7 +30,56 @@ if ($conn->connect_error) {
      session_start();
      $_SESSION['loggedin'] = true;
      $_SESSION['username'] = $username;
-     header("location: adminDashBoard.php");
+     header("location: AdminDashBoard.php");
+    }
+
+    else{
+        $showError = "Passwords don't match!";
+    }
+
+  }
+
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    $deg = $_POST["deg"];
+    
+    $sql2 ="Select * from USERS where username = '$username' AND password = '$password' AND designation = 'Ministry of ENV Rep.'"; //'$deg'
+    $result2 = mysqli_query($conn, $sql2);
+    $num2 = mysqli_num_rows($result2);
+
+    if($num2==1){
+     $login = true;
+     session_start();
+     $_SESSION['loggedin'] = true;
+     $_SESSION['username'] = $username;
+     header("location: AdminPanel.php");
+    }
+
+    else{
+        $showError = "Passwords don't match!";
+    }
+
+  }
+
+
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    $deg = $_POST["deg"];
+    
+    $sql3 ="Select * from USERS where username = '$username' AND password = '$password' AND designation = 'Dhaka City Corporation Rep.'"; //'$deg'
+    $result3 = mysqli_query($conn, $sql3);
+    $num3 = mysqli_num_rows($result3);
+
+    if($num3==1){
+     $login = true;
+     session_start();
+     $_SESSION['loggedin'] = true;
+     $_SESSION['username'] = $username;
+     header("location: AdminPanel.php");
     }
 
     else{
@@ -84,12 +133,12 @@ if ($conn->connect_error) {
 
     <div class="row">
         <div class="col-md-8 col-lg-8">
-          <img src="/CASE MIS/img/Signup scene.jpg" alt="signin" style="width: 90%;">
+          <img src="/CASE MIS V2/img/Signup scene.jpg" alt="signin" style="width: 90%;">
         </div>
 
         <div class="col-md-4 col-lg-4">
         <h1 class="text-center">Already have an account? Login Now</h1> 
-            <form action="/CASE MIS/login.php" method = "post">
+            <form action="/CASE MIS V2/login.php" method = "post">
 
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
@@ -121,7 +170,6 @@ if ($conn->connect_error) {
         </div>
 
     </div>
-
 
 </div>
       
