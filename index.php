@@ -93,6 +93,10 @@
           <a class="nav-link" href="comparison.php" tabindex="-1" >Compare AQI</a>
         </li>
           
+     <li class="nav-item">
+          <a class="nav-link" href="route.php" tabindex="-1" >Route AQI</a>
+        </li>
+          
       </ul>
       <form class="d-flex">
 
