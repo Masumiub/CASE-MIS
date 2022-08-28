@@ -37,7 +37,7 @@
 
     <title>CASE MIS - Admin DashBoard</title>
   </head>
-  <body style="font-family: 'Clash Display', sans-serif;">
+  <body class="bg-dark text-white" style="font-family: 'Clash Display', sans-serif;">
 
       
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary p-md-3">
@@ -59,6 +59,7 @@
           <a class="nav-link" href="yearly.php" tabindex="-1" >Yearly AQI</a>
         </li>
           
+<!--
         <li class="nav-item">
           <a class="nav-link" href="divisionwise.php" tabindex="-1" >Divisionwise AQI</a>
         </li>
@@ -69,6 +70,7 @@
         <li class="nav-item">
           <a class="nav-link" href="comparison.php" tabindex="-1" >Compare AQI</a>
         </li>
+-->
 
       </ul>
       <form class="d-flex">
@@ -95,9 +97,15 @@
             
             <div class="card">
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">Compare AQI</li>
-                <li class="list-group-item">Stationwise AQI</li>
-                <li class="list-group-item">Divisionwise AQI</li>
+                <li class="list-group-item">
+                  <a href="divisionwise.php" >Divisionwise AQI</a>
+                  </li>
+                <li class="list-group-item">
+                  <a  href="stationwise.php"  >Stationwise AQI</a>
+                  </li>
+                <li class="list-group-item">
+                  <a href="comparison.php" >Compare AQI</a>
+                  </li>
               </ul>
             </div>
             
@@ -107,14 +115,23 @@
 
 
 
-      <div class="row" style="margin-top: 40px;">
+      <div class="row" style="margin-top: 20px;">
+          
+                    
+        <div class="div text-center">
+          <h1 style="padding: 20px;">
+            Upload CSV File to Database
+          </h1>
+        </div>
           
         <div class="col-md-6 col-lg-6">
             
-            <div class="card">
+            <div class="card " style="background-color: #3d3d3d; border-radius: 20px; box-shadow: rgba(0, 0, 0, 0.65) 0px 7px 29px 0px; padding: 25px;">
+<!--
               <div class="card-header">
                 Upload
               </div>
+-->
               <div class="card-body">
                     <h5>Import CSV File into Organization_Station</h5>
                     <form action="AdminDashBoard.php" method="post" enctype="multipart/form-data">
@@ -189,10 +206,12 @@
       
         <div class="col-md-6 col-lg-6">
             
-            <div class="card">
+        <div class="card " style="background-color: #3d3d3d; border-radius: 20px; box-shadow: rgba(0, 0, 0, 0.65) 0px 7px 29px 0px; padding: 25px;">
+<!--
               <div class="card-header">
                 Upload
               </div>
+-->
               <div class="card-body">
                   
                     <h5>Import CSV File into Stationwise_data </h5>
@@ -295,57 +314,19 @@
       </div>
         
         
-        <div class="row" style="margin-top: 40px;">
-            <div class="col-md-6 col-lg-6">
-                <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
-            </div>
-            
-            <script>
-            var data = [
-              {
-                x: [2018, 2019, 2020, 2021],
-                y: [20, 14, 23, 50],
-                type: 'bar'
-              }
-            ];
-
-            Plotly.newPlot('myDiv', data);
-
-            </script>
-            
-            <div class="col-md-6 col-lg-6">
-                <div id='myDiv2'><!-- Plotly chart will be drawn inside this DIV --></div>
-            </div>
-            
-            <script>
-                var trace1 = {
-                  x: [1, 2, 3, 4],
-                  y: [10, 15, 13, 17],
-                  type: 'scatter'
-                };
-
-                var trace2 = {
-                  x: [1, 2, 3, 4],
-                  y: [16, 5, 11, 9],
-                  type: 'scatter'
-                };
-
-                var data = [trace1, trace2];
-
-                Plotly.newPlot('myDiv2', data);
-
-            </script>
-        </div>
+ 
         
         
     <div class="row" style="margin-top: 40px;">
           
         <div class="col-md-6 col-lg-6">
             
-            <div class="card">
+        <div class="card " style="background-color: #3d3d3d; border-radius: 20px; box-shadow: rgba(0, 0, 0, 0.65) 0px 7px 29px 0px; padding: 25px;">
+<!--
               <div class="card-header">
                 Upload
               </div>
+-->
               <div class="card-body">
                     <h5>Import CSV File - Routewise Data</h5>
                     <form action="AdminDashBoard.php" method="post" enctype="multipart/form-data">
@@ -436,10 +417,12 @@
         
         <div class="col-md-6 col-lg-6">
             
-            <div class="card">
+        <div class="card " style="background-color: #3d3d3d; border-radius: 20px; box-shadow: rgba(0, 0, 0, 0.65) 0px 7px 29px 0px; padding: 25px;">
+<!--
               <div class="card-header">
                 Upload
               </div>
+-->
               <div class="card-body">
                     <h5>Import CSV File - Station</h5>
                     <form action="AdminDashBoard.php" method="post" enctype="multipart/form-data">
@@ -517,8 +500,443 @@
         
       </div>
         
+        <div class="div text-center">
+          <h1 style="padding: 40px;">
+            Insert Raw Data to Database
+          </h1>
+        </div>
         
+        <!-- =============================================================== -->
+        <!-- =============================================================== -->
+
+        <!-- Button trigger modal -->
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-12">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+  Input Data - Organization
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                    <?php
+                        $showAlert = false;
+                        $showError = false;
+                        if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+                            $OrganizationName = $_POST["OrganizationName"];
+                            $exists = false;
+
+                            if($exists==false){
+
+                                $sql ="INSERT INTO `organization` (`Organization_Name`) VALUES ('$OrganizationName')";
+                                $result = mysqli_query($conn, $sql);
+
+                                if($result){
+                                   $showAlert = true;
+                                }
+                            }
+                            else{
+                                $showError = "Data don't inserted!";
+                            }
+
+                        }
+                    ?>
+                      <div class="modal-dialog bg-dark">
+                        <div class="modal-content bg-dark">
+                          <div class="modal-header bg-dark">
+                            <h5 class="modal-title" id="exampleModalLabel">Input Data into Organization</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body bg-dark">
+                            <form action="AdminDashBoard.php" method = "post">
+                              <div class="mb-3">
+                                <label for="Organization-name" class="col-form-label">Organization Name:</label>
+                                <input type="text" class="form-control" id="OrganizationName" name="OrganizationName">
+                              </div>
+
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                          </div>
+                            </form>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- =============================================================== -->
+                    <!-- =============================================================== -->
+
+
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                      Input Data - Organization Station
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <?php
+                        $showAlert = false;
+                        $showError = false;
+                        if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+                            $Organizationname2 = $_POST["Organizationname2"];
+                            $exists = false;
+
+                            if($exists==false){
+
+                                $sql2 ="INSERT INTO `organization_station` (`Organization_Name`) VALUES ('$Organizationname2')";
+                                $result2 = mysqli_query($conn, $sql2);
+
+                                if($result2){
+                                   $showAlert = true;
+                                }
+                            }
+                            else{
+                                $showError = "Data don't inserted!";
+                            }
+
+                        }
+                    ?>
+
+                      <div class="modal-dialog bg-dark">
+                        <div class="modal-content bg-dark">
+                          <div class="modal-header bg-dark">
+                            <h5 class="modal-title" id="exampleModalLabel">Input Data - Organization Station</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body bg-dark">
+                            <form action="AdminDashBoard.php" method = "post">
+                              <div class="mb-3">
+                                <label for="Organizationname2" class="col-form-label">Organization Name:</label>
+                                <input type="text" class="form-control" id="Organizationname2" name="Organizationname2">
+                              </div>
+
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                           <button type="submit" class="btn btn-primary">Save changes</button>
+                          </div>
+                              </form>
+                        </div>
+                      </div>
+                    </div>
+                      <!-- =============================================================== -->
+                    <!-- =============================================================== -->
+
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                      Input Data - Routewise
+                    </button>
+
+                    <?php
+                        $showAlert = false;
+                        $showError = false;
+                        if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+                            $OrganizationName3 = $_POST["OrganizationName3"];
+                            $Time = $_POST["Time"];
+                            $Location = $_POST["Location"];
+                            $Latitude = $_POST["Latitude"];
+                            $Longitude = $_POST["Longitude"];
+                            $Mean =  $_POST["Mean"];
+                            $exists = false;
+
+
+
+                                $sql3 ="INSERT INTO `routewise_data` (`Organization_Name`, `Time`, `Location`, `Latitude`, `Longitude`, `Mean`) VALUES ('$OrganizationName3', '$Time', '$Location', '$Latitude', '$Longitude', '$Mean')";
+
+
+                                if ($conn->query($sql3) === TRUE) {
+                                echo  '<script>alert("New record created successfully")</script>';
+
+                                } 
+
+
+                        }
+                    ?>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog bg-dark">
+                        <div class="modal-content bg-dark">
+                          <div class="modal-header bg-dark">
+                            <h5 class="modal-title" id="exampleModalLabel3">Input Data - Routewise data</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body bg-dark">
+                            <form action="AdminDashBoard.php" method = "post">
+                              <div class="mb-3">
+                                <label for="OrganizationName3" class="col-form-label">Organization Name:</label>
+                                <input type="text" class="form-control" id="OrganizationName3" name = "OrganizationName3">
+                              </div>
+
+                            <div class="mb-3">
+                                <label for="Time" class="col-form-label">Time</label>
+                                <input type="date" class="form-control" id="Time" name="Time">
+                              </div>
+
+                               <div class="mb-3">
+                                <label for="Location" class="col-form-label">Location</label>
+                                <input type="text" class="form-control" id="Location" name="Location">
+                              </div>
+
+                               <div class="mb-3">
+                                <label for="Latitude" class="col-form-label">Latitude</label>
+                                <input type="text" class="form-control" id="Latitude" name="Latitude" >
+                              </div>
+
+
+                              <div class="mb-3">
+                                <label for="Longitude" class="col-form-label">Longitude</label>
+                                <input type="text" class="form-control" id="Longitude" name="Longitude">
+                              </div>
+
+
+                               <div class="mb-3">
+                                <label for="Mean" class="col-form-label">Mean</label>
+                                <input type="text" class="form-control" id="Mean" name="Mean">
+                              </div>
+
+
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                          </div>
+                            </form>
+                        </div>
+                      </div>
+                    </div>
+
+
+                      <!-- =============================================================== -->
+                    <!-- =============================================================== -->
+
+
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+                      Input Data - Station
+                    </button>
+
+
+                    <?php
+                        $showAlert = false;
+                        $showError = false;
+                        if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+                            $StationID = $_POST["StationID"];
+                            $Division = $_POST["Division"];
+                            $exists = false;
+
+
+
+                                $sql4 ="INSERT INTO `station` (`StationID`, `Division`) VALUES ('$StationID', '$Division')";
+
+
+                                if ($conn->query($sql4) === TRUE) {
+                                echo  '<script>alert("New record created successfully")</script>';
+
+                                } 
+
+
+                        }
+                    ?>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog bg-dark">
+                        <div class="modal-content bg-dark">
+                          <div class="modal-header bg-dark">
+                            <h5 class="modal-title" id="exampleModalLabel3">Input Data - Station</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body bg-dark">
+                            <form action="AdminDashBoard.php" method = "post">
+                              <div class="mb-3">
+                                <label for="StationID" class="col-form-label">StationID:</label>
+                                <input type="text" class="form-control" id="StationID" name="StationID">
+                              </div>
+
+                            <div class="mb-3">
+                                <label for="Division" class="col-form-label">Division</label>
+                                <input type="text" class="form-control" id="Division" name="Division">
+                              </div>
+
+
+
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                          </div>
+                            </form>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <!-- =============================================================== -->
+                    <!-- =============================================================== -->
+
+
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal5">
+                      Input Data - Stationwise Data
+                    </button>
+                    <?php
+                        $showAlert = false;
+                        $showError = false;
+                        if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+                            $Time= $_POST["Time"];
+                            $StationSurKey = $_POST["StationSurKey"];
+                            $PM25 = $_POST["PM25"];
+                            $Average_Temperature = $_POST["Average_Temperature"];
+                            $Rain_Precipitation = $_POST["Rain_Precipitation"];
+                            $Wind_Speed = $_POST["Wind_Speed"];
+                            $Visibility = $_POST["Visibility"];
+                            $Cloud_Cover = $_POST["Cloud_Cover"];
+                            $Relative_Humidity = $_POST["Relative_Humidity"];
+                            $Year = $_POST["Year"];
+                            $Season = $_POST["Season"];
+                            $exists = false;
+
+
+
+                                $sql4 ="INSERT INTO `station` (`Time`, `StationSurKey`, `PM25`, `Average_Temperature`, `Rain_Precipitation`, `Wind_Speed`, `Visibility`, `Cloud_Cover`, `Relative_Humidity`, `Year`, `Season`) VALUES ('$Time', '$StationSurKey', '$PM25', '$Average_Temperature', '$Rain_Precipitation', '$Wind_Speed', '$Visibility' ,'$Cloud_Cover', '$Relative_Humidity', '$Year', '$Season')";
+
+
+                                if ($conn->query($sql5) === TRUE) {
+                                echo  '<script>alert("New record created successfully")</script>';
+
+                                } 
+
+
+                        }
+                    ?>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog bg-dark">
+                        <div class="modal-content bg-dark">
+                          <div class="modal-header bg-dark">
+                            <h5 class="modal-title" id="exampleModalLabel3">Input Data - Stationwise Data</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body bg-dark">
+                            <form action="AdminDashBoard.php" method = "post">
+                              <div class="mb-3">
+                                <label for="Time" class="col-form-label">Time</label>
+                                <input type="date" class="form-control" id="Time" name="Time">
+                              </div>
+
+                            <div class="mb-3">
+                                <label for="StationSurKey" class="col-form-label">StationSurKey</label>
+                                <input type="text" class="form-control" id="StationSurKey" name="StationSurKey">
+                              </div>
+
+                            <div class="mb-3">
+                                <label for="PM25" class="col-form-label">PM25</label>
+                                <input type="text" class="form-control" id="PM25" name="PM25">
+                              </div>
+
+                              <div class="mb-3">
+                                <label for="Average_Temperature" class="col-form-label">Average_Temperature</label>
+                                <input type="text" class="form-control" id="Average_Temperature" name="Average_Temperature">
+                              </div>
+
+                              <div class="mb-3">
+                                <label for="Rain_Precipitation" class="col-form-label">Rain_Precipitation</label>
+                                <input type="text" class="form-control" id="Rain_Precipitation" name="Rain_Precipitation">
+                              </div>
+
+                              <div class="mb-3">
+                                <label for="Wind_Speed" class="col-form-label">Wind_Speed</label>
+                                <input type="text" class="form-control" id="Wind_Speed" name="Wind_Speed">
+                              </div>
+
+                               <div class="mb-3">
+                                <label for="Visibility" class="col-form-label">Visibility</label>
+                                <input type="text" class="form-control" id="Visibility" name="Visibility">
+                              </div>
+
+                              <div class="mb-3">
+                                <label for="Cloud_Cover" class="col-form-label">Cloud_Cover</label>
+                                <input type="text" class="form-control" id="Cloud_Cover" name="Cloud_Cover">
+                              </div>
+
+                              <div class="mb-3">
+                                <label for="Relative_Humidity" class="col-form-label">Relative_Humidity</label>
+                                <input type="text" class="form-control" id="Relative_Humidity" name="Relative_Humidity">
+                              </div>
+
+                               <div class="mb-3">
+                                <label for="Year" class="col-form-label">Year</label>
+                                <input type="text" class="form-control" id="Year" name="Year">
+                              </div>
+
+                               <div class="mb-3">
+                                <label for="Season" class="col-form-label">Season</label>
+                                <input type="text" class="form-control" id="Season" name="Season">
+                              </div>
+
+
+
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                          </div>
+
+                        </form>
+                        </div>
+                      </div>
+                    </div>
+            </div>
+        </div>
       </div>
+      
+              <div class="div text-center">
+          <h1 style="padding: 40px;">
+            Feedback
+          </h1>
+        </div>
+      
+                  <table class="table text-white bg-dark">
+              <thead>
+                <tr>
+                  <th scope="col">Date</th>
+                  <th scope="col">Topic</th>
+                  <th scope="col">Details</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php 
+                  $host = 'localhost';
+	               $user = 'root';
+	               $pass = '';
+	               $db = 'testproject';
+	               $mysqli = new mysqli($host,$user,$pass,$db) or die($mysqli->error);
+
+	               //query to get data from the table
+	               $sql = "select * from feedback";
+                
+                  $result = mysqli_query($mysqli, $sql);
+                    if ($result->num_rows > 0): 
+                  
+                    ?>
+                <?php while($array=mysqli_fetch_row($result)): ?>
+                <tr>
+                    <td><?php echo $array[3];?></td>
+                    <td><?php echo $array[4];?></td>
+                    <td><?php echo $array[5];?></td>
+                </tr>
+                <?php endwhile; ?>
+                <?php else: ?>
+                <tr>
+                   <td colspan="3" rowspan="1" headers="">No Data Found</td>
+                </tr>
+                <?php endif; ?>
+                <?php mysqli_free_result($result); ?>
+              </tbody>
+            </table>
       
       
     <footer class="py-5" style="background-color: #0d6efd; margin-top: 90px; font-family: 'Clash Display', sans-serif;">
