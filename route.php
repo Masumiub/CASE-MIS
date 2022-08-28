@@ -64,6 +64,11 @@
     </div>
   </div>
 </nav>
+            <div class="div text-center">
+          <h1 style="padding: 40px;">
+            Routewise AQI
+          </h1>
+    </div>
     <div id="myDiv"></div>
     
   
