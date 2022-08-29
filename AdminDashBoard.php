@@ -891,15 +891,93 @@
                     </div>
             </div>
         </div>
-      </div>
-      
-              <div class="div text-center">
+
+            <div class="row" style="margin-top: 60px;">
+            <div class="col-md-3 col-lg-3 col-12">
+                <div class="card text-center" style="background-color: #3d3d3d; border-radius: 20px; box-shadow: rgba(0, 0, 0, 0.65) 0px 7px 29px 0px; padding: 25px;">
+
+                  <div class="card-body">
+                      <img src="img/sun.png" style="width: 70px;">
+                    <h5 class="card-title">Seasonwise Report</h5>
+                    <a href="seasonwise.php" class="btn btn-success btn-sm" role="button">VIEW</a>
+                  </div>
+
+                </div>
+            </div>    
+
+            <div class="col-md-3 col-lg-3 col-12">
+                <div class="card text-center" style="background-color: #3d3d3d; border-radius: 20px; box-shadow: rgba(0, 0, 0, 0.65) 0px 7px 29px 0px; padding: 25px;">
+
+                  <div class="card-body">
+                      <img src="img/cloudy-day.png" style="width: 70px;">
+                    <h5 class="card-title">Yearwise <br> Report</h5>
+                    <a href="yearly.php" class="btn btn-success btn-sm" role="button">VIEW</a>
+                  </div>
+
+                </div>
+            </div>  
+
+            <div class="col-md-3 col-lg-3 col-12">
+                <div class="card text-center" style="background-color: #3d3d3d; border-radius: 20px; box-shadow: rgba(0, 0, 0, 0.65) 0px 7px 29px 0px; padding: 25px;">
+
+                  <div class="card-body">
+                      <img src="img/hot.png" style="width: 70px;">
+                    <h5 class="card-title">Divisionwise Report</h5>
+                    <a href="divisionwise.php" class="btn btn-success btn-sm" role="button">VIEW</a>
+                  </div>
+
+                </div>
+            </div>  
+            
+
+            
+            <div class="col-md-3 col-lg-3 col-12">
+                <div class="card text-center" style="background-color: #3d3d3d; border-radius: 20px; box-shadow: rgba(0, 0, 0, 0.65) 0px 7px 29px 0px; padding: 25px;">
+
+                  <div class="card-body">
+                    <img src="img/storm.png" style="width: 70px;">
+                    <h5 class="card-title">Stationwise Report</h5>
+                    <a href="stationwise.php" class="btn btn-success btn-sm" role="button">VIEW</a>
+                  </div>
+
+                </div>
+            </div>  
+
+        </div>
+        
+        <div class="row" style="margin-top: 30px;">
+            <div class="col-md-6 col-lg-6 col-12">
+                <div class="card text-center" style="background-color: #3d3d3d; border-radius: 20px; box-shadow: rgba(0, 0, 0, 0.65) 0px 7px 29px 0px; padding: 25px;">
+
+                  <div class="card-body">
+                      <img src="img/rainy-day.png" style="width: 90px;">
+                    <h5 class="card-title">Compare AQIs of Data Sources</h5>
+                    <a href="comparison.php" class="btn btn-success btn-sm" role="button">VIEW</a>
+                  </div>
+                    
+                </div>
+            </div>  
+            
+            <div class="col-md-6 col-lg-6 col-12">
+                <div class="card text-center" style="background-color: #3d3d3d; border-radius: 20px; box-shadow: rgba(0, 0, 0, 0.65) 0px 7px 29px 0px; padding: 25px;">
+
+                  <div class="card-body">
+                      <img src="img/cloudy.png" style="width: 90px;">
+                    <h5 class="card-title">Overall Bangladesh AQI Report</h5>
+                    <a href="map.php" class="btn btn-success btn-sm" role="button">VIEW</a>
+                  </div>
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="div text-center">
           <h1 style="padding: 40px;">
             Feedback
           </h1>
         </div>
       
-                  <table class="table text-white bg-dark">
+            <table class="table text-white bg-dark">
               <thead>
                 <tr>
                   <th scope="col">Date</th>
@@ -938,6 +1016,8 @@
               </tbody>
             </table>
       
+    </div>
+      
       
     <footer class="py-5" style="background-color: #0d6efd; margin-top: 90px; font-family: 'Clash Display', sans-serif;">
     <div class="container">
@@ -945,6 +1025,9 @@
     </div>
     </footer>
       
+      
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      
+      
   </body>
 </html>
