@@ -7,28 +7,193 @@
 	$mysqli = new mysqli($host,$user,$pass,$db) or die($mysqli->error);
 
 	$Station = '';
-	$AQI = '';
+	$AQIMonth1 = '';
 
-	//query to get data from the table
-	//$sql = " SELECT Station, AVG(PM25) FROM `finaldataset` WHERE Organization='EPA' GROUP BY Station ORDER By Station;";
-
-    $sql = " SELECT Station, AVG(PM25)
-    FROM `organizationwise_data` AS O, `stationwise_data` AS S
-    WHERE O.DataID = S.DataID
-    GROUP BY Station ORDER By Station
-    ";
+    $sql = " SELECT PM25 from stationwise_data, station where station.StationSurKey = stationwise_data.StationSurKey and station.StationID = 1 and MONTH(Time) = '1' ";
 
     $result = mysqli_query($mysqli, $sql);
 
 	//loop through the returned data
 	while ($row = mysqli_fetch_array($result)) {
 
-		$Station = $Station . '"'. $row['Station'].'",';
-		$AQI = $AQI . '"'. $row['AVG(PM25)'] .'",';
+		$AQIMonth1 = $AQIMonth1 . '"'. $row['PM25'] .'",';
 	}
 
-	$Station = trim($Station,",");
-	$AQI = trim($AQI,",");
+	$AQIMonth1 = trim($AQIMonth1,",");
+
+//////////////////////////////////////////////////////////////////////////////////////////
+	$AQIMonth2 = '';
+
+    $sql2 = " SELECT PM25 from stationwise_data, station where station.StationSurKey = stationwise_data.StationSurKey and station.StationID = 1 and MONTH(Time) = '2' ";
+
+    $result2 = mysqli_query($mysqli, $sql2);
+
+	//loop through the returned data
+	while ($row = mysqli_fetch_array($result2)) {
+
+		$AQIMonth2 = $AQIMonth2 . '"'. $row['PM25'] .'",';
+	}
+
+	$AQIMonth2 = trim($AQIMonth2,",");
+
+//////////////////////////////////////////////////////////////////////////////////////////
+	$AQIMonth3 = '';
+
+    $sql3= " SELECT PM25 from stationwise_data, station where station.StationSurKey = stationwise_data.StationSurKey and station.StationID = 1 and MONTH(Time) = '3' ";
+
+    $result3 = mysqli_query($mysqli, $sql3);
+
+	//loop through the returned data
+	while ($row = mysqli_fetch_array($result3)) {
+
+		$AQIMonth3 = $AQIMonth3 . '"'. $row['PM25'] .'",';
+	}
+
+	$AQIMonth3 = trim($AQIMonth3,",");
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+	$AQIMonth4 = '';
+
+    $sql4 = " SELECT PM25 from stationwise_data, station where station.StationSurKey = stationwise_data.StationSurKey and station.StationID = 1 and MONTH(Time) = '4' ";
+
+    $result4 = mysqli_query($mysqli, $sql4);
+
+	//loop through the returned data
+	while ($row = mysqli_fetch_array($result4)) {
+
+		$AQIMonth4 = $AQIMonth4 . '"'. $row['PM25'] .'",';
+	}
+
+	$AQIMonth4 = trim($AQIMonth4,",");
+//////////////////////////////////////////////////////////////////////////////////////////
+
+	$AQIMonth5 = '';
+
+    $sql5 = " SELECT PM25 from stationwise_data, station where station.StationSurKey = stationwise_data.StationSurKey and station.StationID = 1 and MONTH(Time) = '5' ";
+
+    $result5 = mysqli_query($mysqli, $sql5);
+
+	//loop through the returned data
+	while ($row = mysqli_fetch_array($result5)) {
+
+		$AQIMonth5 = $AQIMonth5 . '"'. $row['PM25'] .'",';
+	}
+
+	$AQIMonth5 = trim($AQIMonth5,",");
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+	$AQIMonth6 = '';
+
+    $sql6 = " SELECT PM25 from stationwise_data, station where station.StationSurKey = stationwise_data.StationSurKey and station.StationID = 1 and MONTH(Time) = '6' ";
+
+    $result6 = mysqli_query($mysqli, $sql6);
+
+	//loop through the returned data
+	while ($row = mysqli_fetch_array($result6)) {
+
+		$AQIMonth6 = $AQIMonth6 . '"'. $row['PM25'] .'",';
+	}
+
+	$AQIMonth6 = trim($AQIMonth6,",");
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+	$AQIMonth7 = '';
+
+    $sql7 = " SELECT PM25 from stationwise_data, station where station.StationSurKey = stationwise_data.StationSurKey and station.StationID = 1 and MONTH(Time) = '7' ";
+
+    $result7 = mysqli_query($mysqli, $sql7);
+
+	//loop through the returned data
+	while ($row = mysqli_fetch_array($result7)) {
+
+		$AQIMonth7 = $AQIMonth7 . '"'. $row['PM25'] .'",';
+	}
+
+	$AQIMonth7 = trim($AQIMonth7,",");
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+	$AQIMonth8 = '';
+
+    $sql8 = " SELECT PM25 from stationwise_data, station where station.StationSurKey = stationwise_data.StationSurKey and station.StationID = 1 and MONTH(Time) = '8' ";
+
+    $result8 = mysqli_query($mysqli, $sql8);
+
+	//loop through the returned data
+	while ($row = mysqli_fetch_array($result8)) {
+
+		$AQIMonth8 = $AQIMonth8 . '"'. $row['PM25'] .'",';
+	}
+
+	$AQIMonth8 = trim($AQIMonth8,",");
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+	$AQIMonth9 = '';
+
+    $sql9 = " SELECT PM25 from stationwise_data, station where station.StationSurKey = stationwise_data.StationSurKey and station.StationID = 1 and MONTH(Time) = '9' ";
+
+    $result9 = mysqli_query($mysqli, $sql9);
+
+	//loop through the returned data
+	while ($row = mysqli_fetch_array($result9)) {
+
+		$AQIMonth9 = $AQIMonth9 . '"'. $row['PM25'] .'",';
+	}
+
+	$AQIMonth9 = trim($AQIMonth9,",");
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+	$AQIMonth10 = '';
+
+    $sql10 = " SELECT PM25 from stationwise_data, station where station.StationSurKey = stationwise_data.StationSurKey and station.StationID = 1 and MONTH(Time) = '10' ";
+
+    $result10 = mysqli_query($mysqli, $sql10);
+
+	//loop through the returned data
+	while ($row = mysqli_fetch_array($result10)) {
+
+		$AQIMonth10 = $AQIMonth10 . '"'. $row['PM25'] .'",';
+	}
+
+	$AQIMonth10 = trim($AQIMonth10,",");
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+	$AQIMonth11 = '';
+
+    $sql11 = " SELECT PM25 from stationwise_data, station where station.StationSurKey = stationwise_data.StationSurKey and station.StationID = 1 and MONTH(Time) = '11' ";
+
+    $result11 = mysqli_query($mysqli, $sql11);
+
+	//loop through the returned data
+	while ($row = mysqli_fetch_array($result11)) {
+
+		$AQIMonth11 = $AQIMonth11 . '"'. $row['PM25'] .'",';
+	}
+
+	$AQIMonth11 = trim($AQIMonth11,",");
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+	$AQIMonth12 = '';
+
+    $sql12 = " SELECT PM25 from stationwise_data, station where station.StationSurKey = stationwise_data.StationSurKey and station.StationID = 1 and MONTH(Time) = '12' ";
+
+    $result12 = mysqli_query($mysqli, $sql12);
+
+	//loop through the returned data
+	while ($row = mysqli_fetch_array($result12)) {
+
+		$AQIMonth12 = $AQIMonth12 . '"'. $row['PM25'] .'",';
+	}
+
+	$AQIMonth12 = trim($AQIMonth12,",");
 ?>
 
 
@@ -53,40 +218,43 @@
 
     </head>
 
-<body style="font-family: 'Clash Display', sans-serif;">
+<body class="bg-dark text-white" style="font-family: 'Clash Display', sans-serif;">
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light p-md-3">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary p-md-3">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">CASE</a>
+    <a class="navbar-brand" href="index.php">CASE MIS</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="seasonwise.php">Seasonwise AQI</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
+          
+        <li class="nav-item">
+          <a class="nav-link" href="yearly.php" tabindex="-1" >Yearly AQI</a>
+        </li>
+          
+        <li class="nav-item">
+          <a class="nav-link" href="divisionwise.php" tabindex="-1" >Divisionwise AQI</a>
+        </li>
+          
+        <li class="nav-item">
+          <a class="nav-link" href="stationwise.php" tabindex="-1" >Stationwise AQI</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" tabindex="-1" >Link</a>
+          <a class="nav-link" href="comparison.php" tabindex="-1" >Compare AQI</a>
         </li>
+          
       </ul>
       <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">SignUp</button>
+
+        <a href="signup.php" class="btn btn-success" tabindex="-1" role="button">SignUp</a>
+          
       </form>
     </div>
   </div>
@@ -97,10 +265,9 @@
 
     <div class="div text-center">
           <h3 style="padding: 40px;">
-            Box plot of the station-wise recorded PM2.5 concetration
+              Box plot of the monthly recorded PM2.5 concetration of a station
           </h3>
-          <a href="login.php" class="btn btn-primary" role="button">Upload CSV File</a>
-          <button class="btn btn-success" type="submit">Download AQI Report</button>
+          <button class="btn btn-success" type="submit" id="download">Download AQI Report</button>
         
     </div>
     
@@ -110,236 +277,186 @@
             </div>
     </div> 
         
-<script>
-function linspace(a,b,n) {
-  return d3.range(n).map(function(i){return a+i*(b-a)/(n-1);});
-}
+        <script>
+        var trace1 = {
+          y: [<?php echo $AQIMonth1; ?>],
+          type: 'box',
+
+          jitter: 0.3,
+          pointpos: -1.8,
+          marker: {
+            color: '#0dfafd'
+          },
+          boxpoints: 'all'
+        };
+
+        var trace2 = {
+          y: [<?php echo $AQIMonth2; ?>],
+          type: 'box',
+
+          marker: {
+            color: '#ff91af'
+          },
+          boxpoints: false
+        };
+
+        var trace3 = {
+          y: [<?php echo $AQIMonth3; ?>],
+          type: 'box',
+
+          marker: {
+            color: '#3D9970',
+            outliercolor: 'rgba(219, 64, 82, 0.6)',
+            line: {
+              outliercolor: 'rgba(219, 64, 82, 1.0)',
+              outlierwidth: 2
+            }
+          },
+          boxpoints: 'suspectedoutliers'
+        };
+
+        var trace4 = {
+          y: [<?php echo $AQIMonth4; ?>],
+          type: 'box',
+
+          marker: {
+            color: '#FF4136'
+          },
+          boxpoints: 'Outliers'
+        };
+            
+        var trace5 = {
+          y: [<?php echo $AQIMonth5; ?>],
+          type: 'box',
+
+          marker: {
+            color: '#0dfafd'
+          },
+          boxpoints: 'Outliers'
+        };
+        
+        var trace6 = {
+          y: [<?php echo $AQIMonth6; ?>],
+          type: 'box',
+
+          marker: {
+            color: '#3D9970'
+          },
+          boxpoints: 'Outliers'
+        };
+
+         var trace7 = {
+          y: [<?php echo $AQIMonth7; ?>],
+          type: 'box',
+
+          marker: {
+            color: '#FF4136'
+          },
+          boxpoints: 'Outliers'
+        };
+
+         var trace8 = {
+          y: [<?php echo $AQIMonth8; ?>],
+          type: 'box',
+
+          marker: {
+            color: '#0dfafd'
+          },
+          boxpoints: 'Outliers'
+        };
+            
+         var trace9 = {
+          y: [<?php echo $AQIMonth9; ?>],
+          type: 'box',
     
-var boxNumber = 23;
-var boxColor = [];
-var allColors = linspace(0, 360, boxNumber);
-var data = [];
-var yValues = [];
+          marker: {
+            color: '#3D9970'
+          },
+          boxpoints: 'Outliers'
+        };
+            
+        var trace10 = {
+          y: [<?php echo $AQIMonth10; ?>],
+          type: 'box',
 
-//Colors
+          marker: {
+            color: '#FF4136'
+          },
+          boxpoints: 'Outliers'
+        };
 
-for( var i = 0; i < boxNumber;  i++ ){
-  var result = 'hsl('+ allColors[i] +',50%'+',50%)';
-  boxColor.push(result);
-}
+         var trace11 = {
+          y: [<?php echo $AQIMonth11; ?>],
+          type: 'box',
 
-function getRandomArbitrary(min, max) {
-  return Math.random() * (max - min) + min;
-};
+          marker: {
+            color: '#3D9970'
+          },
+          boxpoints: 'Outliers'
+        };
+            
+        var trace12 = {
+          y: [<?php echo $AQIMonth12; ?>],
+          type: 'box',
 
-//Create Y Values
+          marker: {
+            color: '#0dfafd'
+          },
+          boxpoints: 'Outliers'
+        };
 
-for( var i = 0; i < boxNumber;  i++ ){
-//    
-//
-//    $TmpAQI = '';
-//    $sql = " SELECT Station, PM25 FROM `finaldataset` WHERE Organization='EPA' AND Station='[i]' ";
-//
-//    $result = mysqli_query($mysqli, $sql);
-//
-//	while ($row = mysqli_fetch_array($result)) {
-//		$TmpAQI = $TmpAQI . '"'. $row['PM25'] .'",';
-//	}
-//
-//	$TmpAQI = trim($TmpAQI,",");
-//    
-//    ?>
-//  var ySingleArray = [];
-    var ySingleArray = [];
-    for( var j = 0; j < 10;  j++ ){
-      var randomNum = getRandomArbitrary(0, 1);
-      var yIndValue = 3.5*Math.sin(Math.PI * i/boxNumber) + i/boxNumber+(1.5+0.5*Math.cos(Math.PI*i/boxNumber))*randomNum;
-      ySingleArray.push(yIndValue);
-    }
-  yValues.push(ySingleArray);
-}
+        var data = [trace1, trace2, trace3, trace4, trace5, trace6, trace7, trace8, trace9, trace10, trace11, trace12];
 
-//Create Traces
+        var layout = {
+                plot_bgcolor:"#3d3d3d",
+                paper_bgcolor:"#3d3d3d",
+                title: 'Seasonwise AQI Data Report',
+                font: {
+                        family: 'Arial',
+                        size: 13,
+                        color: '#ffffff'
+                }
+        };
 
-for( var i = 0; i < boxNumber;  i++ ){
-  var result = {
-    y: yValues[i],
-    type:'box',
-    marker:{
-      color: boxColor[i]
-    }
-  };
-  data.push(result);
-};
-
-//Format the layout
-
-var layout = {
-  xaxis: {
-    showgrid: false,
-    zeroline: false,
-    tickangle: 60,
-    showticklabels: false
-  },
-  yaxis: {
-    zeroline: false,
-    gridcolor: 'white'
-  },
-  paper_bgcolor: 'rgb(233,233,233)',
-  plot_bgcolor: 'rgb(233,233,233)',
-  showlegend:false
-};
-
-
-Plotly.newPlot('myDiv', data, layout);
+        Plotly.newPlot('myDiv', data, layout);
     </script>
     
-    
+    <script>
+    window.onload = function () {
+    document.getElementById("download")
+        .addEventListener("click", () => {
+            const invoice = this.document.getElementById("myDiv");
+            //console.log(invoice);
+            console.log(window);
+            var opt = {
+                margin: 0,
+                filename: 'stationAQIreportMonthly.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 1 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'landscape' }
+            };
+            html2pdf().from(invoice).set(opt).save();
+        })
+    }
+    </script>
+
 
     <div class="div text-center">
           <h3 style="padding: 40px;">
-            Box plot of the monthly recorded PM2.5 concetration of a station
+            Box plot of the station-wise recorded PM2.5 concetration
           </h3>
-          <a href="login.php" class="btn btn-primary" role="button">Upload CSV File</a>
           <button class="btn btn-success" type="submit">Download AQI Report</button>
     </div>
     
+<!--
     <div class="row" style="padding: 40px;">
             <div class="col-md-12 col-lg-12 col-12">
                 <div id="myDiv2"></div>
             </div>
     </div> 
+-->
     
-    
-            <script>
-            var y0 = [];
-            var y1 = []; var y2 = []; var y3 = []; var y4 = []; var y5 = []; var y6 = []; var y7 = []; var y8 = [];
-            var y9 = []; var y10 = []; var y11 = []; var y12 = []; var y13 = []; var y14 = []; var y15 = []; 
-            var y16 = []; var y17 = []; var y18 = []; var y19 = []; var y20 = []; var y21 = []; var y22 = [];
-            
-            for (var i = 0; i < 50; i ++) {
-                y0[i] = Math.random();
-                y1[i] = Math.random() + 1;
-              y2[i] = Math.random() + 2;
-              y3[i] = Math.random() + 3;
-              y4[i] = Math.random() + 4;
-              y5[i] = Math.random() + 5;
-              y6[i] = Math.random() + 6;
-              y7[i] = Math.random() + 7;
-              y8[i] = Math.random() + 8;
-              y9[i] = Math.random() + 9;
-              y10[i] = Math.random() + 10;
-                y11[i] = Math.random() + 1;
-              y12[i] = Math.random() + 2;
-              y13[i] = Math.random() + 3;
-              y14[i] = Math.random() + 4;
-              y15[i] = Math.random() + 5;
-              y16[i] = Math.random() + 6;
-              y17[i] = Math.random() + 7;
-              y18[i] = Math.random() + 8;
-              y19[i] = Math.random() + 9;
-              y20[i] = Math.random() + 10;
-                y21[i] = Math.random() + 15;
-                y22[i] = Math.random() + 16;
-            }
 
-            var trace1 = {
-              y: y0,
-              type: 'box'
-            };
-
-            var trace2 = {
-              y: y1,
-              type: 'box'
-            };
-            var trace3 = {
-              y: y2,
-              type: 'box'
-            };
-            var trace4 = {
-              y: y4,
-              type: 'box'
-            };
-            var trace5 = {
-              y: y3,
-              type: 'box'
-            };
-            var trace6 = {
-              y: y6,
-              type: 'box'
-            };
-
-            var trace7 = {
-              y: y9,
-              type: 'box'
-            };
-            var trace8 = {
-              y: y8,
-              type: 'box'
-            };
-            var trace9 = {
-              y: y7,
-              type: 'box'
-            };
-            var trace10 = {
-              y: y10,
-              type: 'box'
-            };
-            var trace11 = {
-              y: y1,
-              type: 'box'
-            };
-            var trace12 = {
-              y: y5,
-              type: 'box'
-            };
-            var trace13 = {
-              y: y8,
-              type: 'box'
-            };
-            var trace14 = {
-              y: y6,
-              type: 'box'
-            };
-            var trace15 = {
-              y: y7,
-              type: 'box'
-            };
-            var trace16 = {
-              y: y4,
-              type: 'box'
-            };
-
-            var trace17 = {
-              y: y9,
-              type: 'box'
-            };
-            var trace18 = {
-              y: y10,
-              type: 'box'
-            };
-            var trace19 = {
-              y: y3,
-              type: 'box'
-            };
-            var trace20 = {
-              y: y5,
-              type: 'box'
-            };
-            var trace21 = {
-              y: y6,
-              type: 'box'
-            };
-            var trace22 = {
-              y: y7,
-              type: 'box'
-            };
-
-            var data = [trace1, trace2, trace3, trace4, trace5, trace6, trace7, trace8, trace9, trace10, trace11, trace12, trace13, trace14, trace15, trace16, trace17, trace18, trace19, trace20, trace21, trace22];
-
-            Plotly.newPlot('myDiv2', data);
-
-        </script>
     
 </div>
 
@@ -352,6 +469,11 @@ Plotly.newPlot('myDiv', data, layout);
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
+
+
+
+
+
 
 
 
