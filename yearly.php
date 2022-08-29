@@ -163,7 +163,7 @@
             
             ?>
             
-            <form id="s" method="post">
+            <form id="s" method="post" style="margin-top: 40px;">
          <select name="area" id="area" style="height: 30px; width: 60%;">
              <option value="">Select a Division:</option>
               <option value="Dhaka" id="Dhaka">Dhaka</option>
@@ -234,6 +234,11 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
+
+
+
+
+
 
 
 
