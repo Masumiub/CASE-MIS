@@ -59,11 +59,11 @@
           <a class="nav-link" href="yearly.php" tabindex="-1" >Yearly AQI</a>
         </li>
           
-<!--
+
         <li class="nav-item">
-          <a class="nav-link" href="divisionwise.php" tabindex="-1" >Divisionwise AQI</a>
+          <a class="nav-link" href="#feedback" tabindex="-1" >Feedback</a>
         </li>
-          
+<!--       
         <li class="nav-item">
           <a class="nav-link" href="stationwise.php" tabindex="-1" >Stationwise AQI</a>
         </li>
@@ -105,7 +105,7 @@
                   </li>
                 <li class="list-group-item">
                   <a href="comparison.php" >Compare AQI</a>
-                  </li>
+                </li>
               </ul>
             </div>
             
@@ -971,7 +971,7 @@
             </div>
         </div>
         
-        <div class="div text-center">
+        <div class="div text-center" id="feedback">
           <h1 style="padding: 40px;">
             Feedback
           </h1>
