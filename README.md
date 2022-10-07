@@ -20,3 +20,6 @@ So, the main purpose of this report is to present, explore and make available th
 
 # EERD (Proposed)
 ![ERD Proposed (1)](https://user-images.githubusercontent.com/66321598/186422462-d3e90f51-50b8-4ec8-80e5-13761c5f2e88.png)
+
+#Output:
+![Screenshot (182)](https://user-images.githubusercontent.com/66321598/194598908-8a2ee795-4f6d-4e07-be15-8a195b798d71.png)
